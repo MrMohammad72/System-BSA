@@ -39,6 +39,7 @@ Route::group(['prefix' => 'payment_BSA','namespace'=>'payment_BSA'], function ($
     Route::delete('basket','BasketController@clear')->name('basket.prosuct.clear.all');
     Route::post('basket/checkout','BasketController@checkout')->name('basket.checkout');
     Route::post('payment/{gateway}/callback','PaymentController@verify')->name('payment.verify');
+    Route::post('orders','OrdersController@index')->name('orders.index');
 
 });
 
