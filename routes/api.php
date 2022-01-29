@@ -41,6 +41,7 @@ Route::group(['prefix' => 'payment_BSA','namespace'=>'payment_BSA'], function ($
     Route::post('payment/{gateway}/callback','PaymentController@verify')->name('payment.verify');
     Route::post('orders','OrdersController@index')->name('orders.index');
     Route::get('invoice/orders/{order}','InvoicesController@show')->name('invoice.orders.show');
+    Route::get('pay/orders/{order}','OrdersController@pay')->name('orders.pay');
 
 });
 

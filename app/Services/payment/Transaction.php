@@ -42,7 +42,7 @@ class Transaction
         
             $order = $this->makeOrder($request);
             $order->generateInvoice();
-            dd('hi');
+           
 
             $payment = $this->makePayment($order);
             
@@ -122,7 +122,9 @@ class Transaction
     private function gatewayFactory()
     {
 
-        if (!$this->request->has('gateway')) return resolve(Saman::class);
+        if (!$this->request->has('gateway')) {
+            return resolve(Saman::class);
+        }
        
 
         $gateway = [
