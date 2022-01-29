@@ -44,9 +44,14 @@ class order extends Model
     {
         return $this->payment->status;
     }
-    public function downloadInvoices()
+   
+    public function downloadInvoice()
     {
-        return Storage::disk('public')->download('invoices/'.$this->id.".pdf");
+
+        return Storage::disk('public')->download('invoices/' . $this->id . '.pdf');
+
     }
+  
+
 
 }

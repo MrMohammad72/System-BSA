@@ -73,26 +73,21 @@ class Transaction
        
 
         if ($result['status'] === GatewayInterface::TRANSACTION_FAILED) return false;
-        
-        
-        
+           
         $this->confirmPayment($result);
         
         
         $this->completeOrder($result['order']);
        
-
         return true;
     }
-
-
 
     private function completeOrder($order)
     {
         
        $this->normalizeQuantity($order);
        
-      // event(new OrderRegistered($order));
+       event(new OrderRegistered($order));
        
      
        $this->basket->clear();
