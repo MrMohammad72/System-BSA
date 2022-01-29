@@ -39,9 +39,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind(storageInterface::class,function ($app){
+        $this->app->bind(storageInterface::class, function ($app) {
             return new SessionStorage('cart');
         });
-
     }
+       
 }
