@@ -5,6 +5,7 @@ namespace App;
 use App\Services\Storage\Basket\Basket;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use niklasravnsborg\LaravelPdf\Facades\Pdf;
 
 class order extends Model
@@ -42,6 +43,10 @@ class order extends Model
     public function paid()
     {
         return $this->payment->status;
+    }
+    public function downloadInvoices()
+    {
+        return Storage::disk('public')->download('invoices/'.$this->id.".pdf");
     }
 
 }

@@ -40,6 +40,7 @@ Route::group(['prefix' => 'payment_BSA','namespace'=>'payment_BSA'], function ($
     Route::post('basket/checkout','BasketController@checkout')->name('basket.checkout');
     Route::post('payment/{gateway}/callback','PaymentController@verify')->name('payment.verify');
     Route::post('orders','OrdersController@index')->name('orders.index');
+    Route::get('invoice/orders/{order}','InvoicesController@show')->name('invoice.orders.show');
 
 });
 
