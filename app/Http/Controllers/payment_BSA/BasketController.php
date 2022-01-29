@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\payment_BSA;
 
-
 use App\Http\Controllers\Controller;
 use App\product;
 use App\Services\Storage\Basket\Basket;
@@ -16,7 +15,7 @@ class BasketController extends Controller
 {
   private $basket;
   private $session;
- private $transaction;
+  private $transaction;
   public function __construct(Basket $basket,Session $session,Transaction $transaction)
   {
    $this->basket=$basket;

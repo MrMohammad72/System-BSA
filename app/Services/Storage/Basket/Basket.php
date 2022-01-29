@@ -55,11 +55,8 @@ private $storage;
         if (!$quantity){
           
           return $this->storage->unset($product->id);
-        }
-       
-        
+        } 
         return $this->storage->increment($product,$quantity);
-
     }
   
 
@@ -99,8 +96,6 @@ private $storage;
          
          $total+=$item->price * $item->quantity;
         }
-      
-    
         return $total;
     }
 
